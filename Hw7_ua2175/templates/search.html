@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+        
+        <script type="text/javascript" src="{{ url_for('static', filename='search.js') }}"></script>
+
+        <script>
+                var results = {{ results|tojson }}
+                var query = {{ query|tojson }}
+                var num_results = {{ num_results|tojson }}
+                
+        </script>
+
+        <h1 class="paperheading" id="ipaperheading"></h1>
+
+        <div id="searches"></div>
+{% endblock %}

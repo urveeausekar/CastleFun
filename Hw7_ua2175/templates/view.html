@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+        
+        <script type="text/javascript" src="{{ url_for('static', filename='view.js') }}"></script>
+
+        <script>
+                var data = {{ data|tojson }}
+                
+        </script>
+
+        <h1 class="paperheading" id="heading">{{data.title}}</h1>
+
+        <div id="alldata">
+                <div class="image"> <img src="{{data.image}}" width='800' height='500'> </div>
+
+                <div class='year paddata'>Year of Construction : {{data.year}}</div>
+
+                <div class='summary paddata'>{{data.summary}}</div>
+
+                <div class='country paddata'>Location : {{data.country}}</div>
+
+                Keywords :
+                <ul>
+                        {% for element in data.genres  %}
+                                <li class='listitem'>{{element}}</li>
+                        {% endfor %}
+                </ul>
+
+        </div>
+{% endblock %}

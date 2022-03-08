@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+        
+        <script type="text/javascript" src="{{ url_for('static', filename='homepage.js') }}"></script>
+
+        <script>
+                var most_popular = {{ most_popular|tojson }}
+                
+        </script>
+
+        <h1 class="paperheading">Most Popular Castles This Week</h1>
+
+        <div id="popular_week"></div>
+{% endblock %}
