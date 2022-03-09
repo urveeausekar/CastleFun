@@ -151,47 +151,47 @@ castles = {
 	}
 }
 
-most_popular = [
-	{
-		"id": "1",
-		"title": "Corvin Castle",
-		"name" : "corvin",
-		"image": "https://upload.wikimedia.org/wikipedia/commons/3/38/Hunedoara_castle.jpg",
-		"year": "1446",
-		"country": "Romania",
-		"summary": "Corvin Castle, also known as Hunyadi Castle or Hunedoara Castle, is a Gothic-Renaissance castle in Hunedoara, Romania. It is a very beautiful castle that was used as the residence of the ruling family of the area. it was the place where Vlad the Impaler (popularly known as the real-life Dracula), was held prisoner by John Hunyadi, Hungary's military leader and regent during the King's minority. the castle was used as the 'Carta Monastary' in the horror movie 'The Nun'.",
-		"genres": ["Romania", "gothic", "renaissance", "15th century"],
-		"pop" : ["Vlad the Impaler", "The Nun", "Dracula"],
-		"rating" : "8.9/10",
-		"time" : "Tues to Sun : 8:00 - 19:00, Monday closed"
-	},
-	{
-		"id": "2",
-		"title": "The Castle Orava",
-		"name" : "orava",
-		"image": "https://upload.wikimedia.org/wikipedia/commons/3/35/Orava_Castle_01.jpg",
-		"year": "1267",
-		"country": "Slovakia",
-		"summary": "Orava Castle is a castle situated on a high rock above Orava river in the village of Oravský Podzámok, Slovakia. It is considered to be one of the most beautiful castles in Slovakia. The castle was built in the Kingdom of Hungary in the thirteenth century. The original design was in Romanesque and Gothic style; it was later reconstructed as a Renaissance and Neo-Gothic structure, hugging the shape of the 520-metre spur on which it perches. Many scenes of the 1922 film Nosferatu were filmed here, the castle representing Count Orlok's Transylvanian castle. In their 2020 TV adaptation of Bram Stoker's novel Dracula, Mark Gatiss and Steven Moffat also used Orava as their Castle Dracula. It was also used by the Polish video game company CD Projekt as inspiration for the fictional Kaer Morhen, fortress for the witchers of the Wolf School in Andrzej Sapkowski's The Witcher book series.",
-		"genres": ["Slovakia", "gothic", "renaissance", "13th century"],
-		"pop" : ["Dracula", "The Witcher : Kaer Morhen"],
-		"rating" : "9.7/10",
-		"time" : "Tues to Sun : 7:30 - 18:00, Monday closed"
-	},
-	{
-		"id": "3",
-		"title": "Neuschwanstein Castle",
-		"name" : "neuschwanstein",
-		"image": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Castle_Neuschwanstein.jpg",
-		"year": "1869",
-		"country": "Germany",
-		"summary": "Neuschwanstein Castle is a 19th-century historicist palace on a rugged hill above the village of Hohenschwangau near Füssen in southwest Bavaria, Germany. The palace was commissioned by King Ludwig II of Bavaria as a retreat and in honour of Richard Wagner. A popular tourist destination, the palace has appeared prominently in several movies. It served as the inspiration for Disneyland's Sleeping Beauty Castle.",
-		"genres": ["Germany", "romanesque", "gothic", "byzantine", "19th century"],
-		"pop" : ["Sleeping Beauty Castle", "Chitty Chitty Bang Bang"],
-		"rating" : "8.3/10",
-		"time" : "All week : 7:00 - 19:00"
-	}
-]
+# most_popular = [
+# 	{
+# 		"id": "1",
+# 		"title": "Corvin Castle",
+# 		"name" : "corvin",
+# 		"image": "https://upload.wikimedia.org/wikipedia/commons/3/38/Hunedoara_castle.jpg",
+# 		"year": "1446",
+# 		"country": "Romania",
+# 		"summary": "Corvin Castle, also known as Hunyadi Castle or Hunedoara Castle, is a Gothic-Renaissance castle in Hunedoara, Romania. It is a very beautiful castle that was used as the residence of the ruling family of the area. it was the place where Vlad the Impaler (popularly known as the real-life Dracula), was held prisoner by John Hunyadi, Hungary's military leader and regent during the King's minority. the castle was used as the 'Carta Monastary' in the horror movie 'The Nun'.",
+# 		"genres": ["Romania", "gothic", "renaissance", "15th century"],
+# 		"pop" : ["Vlad the Impaler", "The Nun", "Dracula"],
+# 		"rating" : "8.9/10",
+# 		"time" : "Tues to Sun : 8:00 - 19:00, Monday closed"
+# 	},
+# 	{
+# 		"id": "2",
+# 		"title": "The Castle Orava",
+# 		"name" : "orava",
+# 		"image": "https://upload.wikimedia.org/wikipedia/commons/3/35/Orava_Castle_01.jpg",
+# 		"year": "1267",
+# 		"country": "Slovakia",
+# 		"summary": "Orava Castle is a castle situated on a high rock above Orava river in the village of Oravský Podzámok, Slovakia. It is considered to be one of the most beautiful castles in Slovakia. The castle was built in the Kingdom of Hungary in the thirteenth century. The original design was in Romanesque and Gothic style; it was later reconstructed as a Renaissance and Neo-Gothic structure, hugging the shape of the 520-metre spur on which it perches. Many scenes of the 1922 film Nosferatu were filmed here, the castle representing Count Orlok's Transylvanian castle. In their 2020 TV adaptation of Bram Stoker's novel Dracula, Mark Gatiss and Steven Moffat also used Orava as their Castle Dracula. It was also used by the Polish video game company CD Projekt as inspiration for the fictional Kaer Morhen, fortress for the witchers of the Wolf School in Andrzej Sapkowski's The Witcher book series.",
+# 		"genres": ["Slovakia", "gothic", "renaissance", "13th century"],
+# 		"pop" : ["Dracula", "The Witcher : Kaer Morhen"],
+# 		"rating" : "9.7/10",
+# 		"time" : "Tues to Sun : 7:30 - 18:00, Monday closed"
+# 	},
+# 	{
+# 		"id": "3",
+# 		"title": "Neuschwanstein Castle",
+# 		"name" : "neuschwanstein",
+# 		"image": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Castle_Neuschwanstein.jpg",
+# 		"year": "1869",
+# 		"country": "Germany",
+# 		"summary": "Neuschwanstein Castle is a 19th-century historicist palace on a rugged hill above the village of Hohenschwangau near Füssen in southwest Bavaria, Germany. The palace was commissioned by King Ludwig II of Bavaria as a retreat and in honour of Richard Wagner. A popular tourist destination, the palace has appeared prominently in several movies. It served as the inspiration for Disneyland's Sleeping Beauty Castle.",
+# 		"genres": ["Germany", "romanesque", "gothic", "byzantine", "19th century"],
+# 		"pop" : ["Sleeping Beauty Castle", "Chitty Chitty Bang Bang"],
+# 		"rating" : "8.3/10",
+# 		"time" : "All week : 7:00 - 19:00"
+# 	}
+# ]
 
 # ROUTES
 
@@ -232,6 +232,8 @@ def search():
 		if "query" in req:
 			query = req["query"]
 			#print(query)
+			queryoriginal = query
+			query = query.lower()
 			num_results = 0
 
 			if (query == "" or query.isspace() == True):
@@ -241,17 +243,35 @@ def search():
 			results = []
 			for element in castles:
 				#print(element)
-				if query in castles[element]["title"]:
+				if query in castles[element]["title"].lower():
 					results.append(castles[element])
 					num_results = num_results + 1
+				else:
+					found = 0
+					for popelement in castles[element]["pop"]:
+						if query in popelement.lower():
+							results.append(castles[element])
+							num_results = num_results + 1
+							found = 1
+							break
+					
+					if found == 0:
+						for genreelement in castles[element]["genres"]:
+							if query in genreelement.lower():
+								results.append(castles[element])
+								num_results = num_results + 1
+								break
+
+					
+
 
 			#print(results)
 			#print(str(num_results))
 			#print(query)
-			prev_query = query
+			prev_query = queryoriginal
 			prev_num_results = str(num_results)
 			prev_results = results
-			return render_template('search.html', results=results, num_results=str(num_results), query=query)
+			return render_template('search.html', results=results, num_results=str(num_results), query=queryoriginal)
 		else:
 			return render_template('search.html', results=results, num_results=str(num_results), query=query)
 
