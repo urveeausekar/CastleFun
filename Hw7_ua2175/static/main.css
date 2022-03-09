@@ -4,7 +4,6 @@
 	color: green;
 }
 .paperheading{
-	background-color: lightgray;
 	font-size: xxx-large;
 	font-weight: bold;
 	padding-top: 70px;
@@ -51,4 +50,45 @@ a:hover{
 
 .listitem{
 	margin-left: 30px;
+}
+
+.bgdarkgray{
+	background-color: #c9d7e8;
+}
+
+.bglightgray{
+	background-color: aliceblue;
+}
+
+.basecolour{
+	background-color: #dae4e7;
+}
+
+.accentcolour{
+	background-color: #d9534f;
+}
+
+.homepageimg{
+	max-width: 100%;
+	height: auto;
+}
+
+.imglink{
+	width: 150px;
+	height: auto;
+}
+
+.homerow{
+	padding: 10px;
+}
+
+.homepagetitle{
+	font-size: xx-large;
+	text-align: center;
+	background-color: white;
+}
+
+.rowtitle{
+	font-weight: bolder;
+	font-size: larger;
 }
