@@ -5,8 +5,11 @@
         <script type="text/javascript" src="{{ url_for('static', filename='search.js') }}"></script>
 
         <script>
-                var results = {{ results|tojson }}
+                var title_results = {{ title_results|tojson }}
+                var pop_results = {{ pop_results|tojson }}
+                var genre_results = {{ genre_results|tojson }}
                 var query = {{ query|tojson }}
+                var lquery = query.toLowerCase()
                 var num_results = {{ num_results|tojson }}
                 
         </script>

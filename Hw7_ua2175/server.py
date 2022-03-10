@@ -5,6 +5,7 @@ from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
 from flask import redirect
+from matplotlib.pyplot import title
 
 app = Flask(__name__)
 
@@ -218,7 +219,10 @@ def view(id=None):
 	data = castles[id]
 	return render_template('view.html', data=data)
 
-prev_results = []
+prev_results = [[], [], []]
+prev_title_results = []
+prev_pop_results = []
+prev_genre_results = []
 prev_num_results = "0"
 prev_query = ""
 
@@ -227,11 +231,15 @@ def search():
 	global prev_results
 	global prev_num_results
 	global prev_query
+	global prev_title_results
+	global prev_pop_results
+	global prev_genre_results
 	if request.method == 'POST':
 		req = request.form
+		print("2")
 		if "query" in req:
 			query = req["query"]
-			#print(query)
+			print("In 1")
 			queryoriginal = query
 			query = query.lower()
 			num_results = 0
@@ -240,27 +248,34 @@ def search():
 				#print("Found whitespace")
 				return redirect(request.referrer)
 
-			results = []
+			title_results = []
+			pop_results = []
+			genre_results = []
+			
+			# results[0] for title results
+			# results[1] for pop results
+			# results[2] for genres
+
 			for element in castles:
 				#print(element)
+				# Search titles
 				if query in castles[element]["title"].lower():
-					results.append(castles[element])
+					title_results.append(castles[element])
 					num_results = num_results + 1
-				else:
-					found = 0
-					for popelement in castles[element]["pop"]:
-						if query in popelement.lower():
-							results.append(castles[element])
-							num_results = num_results + 1
-							found = 1
-							break
-					
-					if found == 0:
-						for genreelement in castles[element]["genres"]:
-							if query in genreelement.lower():
-								results.append(castles[element])
-								num_results = num_results + 1
-								break
+				
+				# Search pop list
+				for popelement in castles[element]["pop"]:
+					if query in popelement.lower():
+						pop_results.append(castles[element])
+						num_results = num_results + 1
+						found = 1
+						break
+				# Search genre list
+				for genreelement in castles[element]["genres"]:
+					if query in genreelement.lower():
+						genre_results.append(castles[element])
+						num_results = num_results + 1
+						break
 
 					
 
@@ -270,14 +285,19 @@ def search():
 			#print(query)
 			prev_query = queryoriginal
 			prev_num_results = str(num_results)
-			prev_results = results
-			return render_template('search.html', results=results, num_results=str(num_results), query=queryoriginal)
+			#prev_results = results
+			prev_title_results = title_results
+			prev_genre_results = genre_results
+			prev_pop_results = pop_results
+
+			return render_template('search.html', title_results=title_results, genre_results=genre_results, pop_results=pop_results, num_results=str(num_results), query=queryoriginal)
 		else:
-			return render_template('search.html', results=results, num_results=str(num_results), query=query)
+			print("In 3")
+			return render_template('search.html', title_results=title_results, genre_results=genre_results, pop_results=pop_results, num_results=str(num_results), query=query)
 
 	else:
-		#print("________________________" + request.referrer)
-		return render_template('search.html', results=prev_results, num_results=prev_num_results, query=prev_query)
+		print("________________________" + request.referrer)
+		return render_template('search.html', title_results=prev_title_results, genre_results=prev_genre_results, pop_results=prev_pop_results, num_results=prev_num_results, query=prev_query)
 
 
 
