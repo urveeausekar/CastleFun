@@ -217,8 +217,9 @@ def homepage():
 @app.route('/view/<id>')
 def view(id=None):
 	#print(id)
-	#print(type(id))
+	print("in view data")
 	data = castles[id]
+	print(id)
 	return render_template('view.html', data=data)
 
 
@@ -320,7 +321,6 @@ def search():
 
 
 
-
 @app.route('/save_data', methods=['GET', 'POST'])
 def save_data():
 	global castles
@@ -360,7 +360,44 @@ def save_data():
 
 
 
+@app.route('/edit_data/<id>', methods=['GET', 'POST'])
+def edit_data(id=None):
+	global castles
+	global current_id
+	json_data = request.get_json()
+	print("in route edit data")
 
+	# parse data lists
+	rawpop = json_data["pop"]
+	rawgenre = json_data["genres"]
+	pop = rawpop.split(",")
+	genres = rawgenre.split(",")
+
+	# create new dictionary
+	new_castle = {
+		"id": id,
+		"title": json_data["title"],
+		"name" : json_data["name"],
+		"image": json_data["image"],
+		"year": json_data["year"],
+		"country": json_data["country"],
+		"summary": json_data["summary"],
+		"genres": genres,
+		"pop" : pop,
+		"rating" : json_data["rating"],
+		"time" : json_data["time"],
+		"text" : json_data["text"]
+	}
+
+	# add new element to dictionary
+	print(type(id))
+	castles[id] = new_castle
+	print("about to redirect")
+	print(castles)
+	#return render_template('view.html', data=new_castle)
+	return redirect("http://127.0.0.1:5000/view/" + id)
+	#return render_template('add.html')
+	#return jsonify(id=id)
 
 
 
