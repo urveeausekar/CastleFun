@@ -4,7 +4,7 @@ function print_titles(names){
         $.each(names, function(index, item){
 
                 let newRow = $("<div class='row homerow'>")
-                let col1 = $("<div class='col-md-3 rowtitle'>")
+                let col1 = $("<div class='col-md-2 rowtitle'>")
                 let ltitle = item["title"].toLowerCase()
                 if(ltitle.includes(lquery)){
                         let position = ltitle.indexOf(lquery)
@@ -15,7 +15,7 @@ function print_titles(names){
                 let col2 = $("<div class='col-md-6'>")
                 col2.html(item["text"])
 
-                let col3 = $("<div class='col-md-3'>")
+                let col3 = $("<div class='col-md-4'>")
                 let clickableImg = $("<a href='http://127.0.0.1:5000/view/" + item["id"] + "'><img class='imglink' src='" + item["image"] + "' alt='picture of" + item["title"] + "'></a>")
                 col3.append(clickableImg)
 
@@ -31,7 +31,7 @@ function print_pop(names){
         let newpopitem = ""
         $.each(names, function(index, item){
                 let newRow = $("<div class='row homerow'>")
-                let col1 = $("<div class='col-md-3 rowtitle'>")
+                let col1 = $("<div class='col-md-2 rowtitle'>")
                 col1.html(item["title"])
 
                 let col2 = $("<div class='col-md-3'>")
@@ -62,7 +62,7 @@ function print_pop(names){
                 })
                 col25.append(genrelist)
 
-                let col3 = $("<div class='col-md-3'>")
+                let col3 = $("<div class='col-md-4'>")
                 let clickableImg = $("<a href='http://127.0.0.1:5000/view/" + item["id"] + "'><img class='imglink' src='" + item["image"] + "' alt='picture of" + item["title"] + "'></a>")
                 col3.append(clickableImg)
 
@@ -78,7 +78,7 @@ function print_genres(names){
         let newgitem = ""
         $.each(names, function(index, item){
                 let newRow = $("<div class='row homerow'>")
-                let col1 = $("<div class='col-md-3 rowtitle'>")
+                let col1 = $("<div class='col-md-2 rowtitle'>")
                 col1.html(item["title"])
 
                 let col15 = $("<div class='col-md-3'>")
@@ -109,7 +109,7 @@ function print_genres(names){
                 })
                 col2.append(genrelist)
 
-                let col3 = $("<div class='col-md-3'>")
+                let col3 = $("<div class='col-md-4'>")
                 let clickableImg = $("<a href='http://127.0.0.1:5000/view/" + item["id"] + "'><img class='imglink' src='" + item["image"] + "' alt='picture of" + item["title"] + "'></a>")
                 col3.append(clickableImg)
 
@@ -142,17 +142,26 @@ $(document).ready(function(){
                 $("#ipaperheading").append(numResultsText)
 
                 let titleheading = $("<div class='foundsectionheading'>")
-                titleheading.html = ("Found in \"Titles\"")
+                if(title_results.length == 0)
+                        titleheading.html('')
+                else
+                        titleheading.html("Found in \"Titles\"")
                 $("#searches").append(titleheading)
                 print_titles(title_results)
 
                 let popheading = $("<div class='foundsectionheading'>")
-                popheading.html("Found in \"Popular Trivia\"")
+                if(pop_results.length == 0)
+                        popheading.html('')
+                else
+                        popheading.html("Found in \"Popular Trivia\"")
                 $("#searches").append(popheading)
                 print_pop(pop_results)
 
                 let genreheading = $("<div class='foundsectionheading'>")
-                genreheading.html("Found in \"Genre\"")
+                if(genre_results.length == 0)
+                        genreheading.html('')
+                else
+                        genreheading.html("Found in \"Genre\"")
                 $("#searches").append(genreheading)
                 print_genres(genre_results)
         }

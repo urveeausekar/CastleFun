@@ -9,24 +9,44 @@
                 
         </script>
 
-        <h1 class="paperheading" id="heading">{{data.title}}</h1>
+        <div class="row">
+                <div class="col-md-9">
+                        <div class="row viewtitlerow">
+                                <div class="col-md-10 viewtitle">{{data.title}}</div>
+                                <div class="col-md-2 viewrating">{{data.rating}}</div>
+                        </div>
+                        <div class="row">
+                                <div class="image"> <img class="viewimg" src="{{data.image}}" width='800' height='500'> </div>
+                        </div>
+                        <div class="row viewtime">{{data.time}}</div>
+                        <div class="row viewcountryrow"><span class="countrylabel">Country : </span><span class="viewcountry">{{data.country}}</span></div>
+                        <div class="row viewsummary">{{data.summary}}</div>
+                        <div class="row viewbuiltinrow"><span class="builtinlabel">Built In : </span><span class="viewbuiltin">{{data.year}}</span></div>
+                </div>
+                <div class="col-md-3">
+                        <div class="row genrediv">
+                                
+                                
+                                <div class="genreheader">Genres</div>
+                                <ul>
+                                        {% for element in data.genres  %}
+                                                <li class='glistitem'>{{element}}</li>
+                                        {% endfor %}
+                                </ul>
 
-        <div id="alldata">
-                <div class="image"> <img src="{{data.image}}" width='800' height='500'> </div>
-
-                <div class='year paddata'>Year of Construction : {{data.year}}</div>
-
-                <div class='summary paddata'>{{data.summary}}</div>
-
-                <div class='country paddata'>Location : {{data.country}}</div>
-
-                Keywords :
-                <ul>
-                        {% for element in data.genres  %}
-                                <li class='listitem'>{{element}}</li>
-                        {% endfor %}
-                </ul>
-
+                        </div>
+                        <div class="row">
+                                <div>Interesting Trivia</div>
+                                <ul>
+                                        
+                                </ul>
+                        </div>
+                </div>
+                <div class="row editbutton"><button class="btn accentcolour" id="edit" type="button">Edit this item</button></div>
+                <br>
+                <br>
+                <br>
         </div>
-        <button id="edit">Edit this item</button>
+
+        
 {% endblock %}

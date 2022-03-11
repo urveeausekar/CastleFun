@@ -26,23 +26,23 @@
 
 		<title>Castle Fun!</title>
 	</head>	
-	<body class="bglightgray">
+	<body class="basecolour">
 
 
 		<nav class="navbar navbar-light bgdarkgray">
 			<div class="container">
-				<a class="navbar-brand" href="/">Castle Fun</a>
+				<a class="navbar-brand sitetitle" href="/">Castle Fun</a>
 				<ul class="nav alignleft">
-					<li class="nav-item"><a class="nav-link" href="/add">+Add new item!</a></li>
+					<li class="nav-item"><a class="nav-link accentcolour addnewitem" href="/add">+Add new item!</a></li>
 				      </ul>
 				<form action="http://127.0.0.1:5000/search" method="POST" class="form-inline" id="target">
 					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query">
-					<button id="searchbtn" class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
+					<button id="searchbtn" class="btn my-2 my-sm-0 accentcolour" type="submit">Search</button>
 				</form>
 			</div>
 		</nav>
 
-		<div class="container basecolour">   
+		<div class="container bglightgray">   
 			{% block content %}
 			{% endblock %}
 		</div>
