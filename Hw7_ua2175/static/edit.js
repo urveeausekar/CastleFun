@@ -226,4 +226,10 @@ $(document).ready(function(){
                 }
         })
 
+        $("#discard").click(function(){
+                console.log("Discard clicked")
+                let id = parseInt(data["id"]);
+                window.location.href = "http://127.0.0.1:5000/view/" + id.toString();
+        })
+
 })
