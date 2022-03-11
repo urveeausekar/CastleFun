@@ -33,6 +33,10 @@
 $(document).ready(function(){
         console.log(data)
 
+        $("#edit").click(function(){
+                window.location.href = '/edit/' + data["id"]
+        })
+
         /*$("#heading").html(data["title"])*/
         /*display_data(data)*/
 })

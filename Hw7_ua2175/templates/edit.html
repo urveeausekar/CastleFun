@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+        
+        <script type="text/javascript" src="{{ url_for('static', filename='edit.js') }}"></script>
+
+        <script>
+                var data = {{ data|tojson }}
+        </script>
+
+        <div id="successmsg"></div>
+
+        <div>Edit Information</div>
+        <div>
+                <div class="padip" id="title">Title :<br><input class="ipstyle" id="ititle" type="text"><span class="err" id="errtitle"></span></div>
+
+                <div class="padip" id="imgl">Image Link :<br><input class="ipstyle" id="iimgl" type="text"><span class="err" id="errimgl"></span></div>
+                
+                <div class="padip" id="year">Year :<br><input class="ipstyle" id="iyear" type="text"><span class="err" id="erryear"></span></div>
+
+                <div class="padip" id="country">Country :<br><input class="ipstyle" id="icountry" type="text"><span class="err" id="errcountry"></span></div>
+
+                <div class="padip" id="summary">Summary :<br><input class="ipstyle" id="isummary" type="text"><span class="err" id="errsummary"></span></div>
+
+                <div class="instr">Input "Popular Trivia" and "Genre" as a list of words/phrases separated by a comma.</div>
+                <div class="padip2" id="pop">Popular Trivia :<br><input class="ipstyle" id="ipop" type="text"><span class="err" id="errpop"></span></div>
+
+                <div class="padip" id="genre">Genre :<br><input class="ipstyle" id="igenre" type="text"><span class="err" id="errgenre"></span></div>
+
+                <div class="instr">Rating should be out of 10 and in the format : 7.5/10</div>
+                <div class="padip2" id="rating">Rating :<br><input class="ipstyle" id="irating" type="text"><span class="err" id="errrating"></span></div>
+
+                <div class="padip" id="time">Time :<br><input class="ipstyle" id="itime" type="text"><span class="err" id="errtime"></span></div>
+
+                <div class="padip" id="oneline">One line that entices the viewer to visit this castle :<br><input class="ipstyle" id="ioneline" type="text"><span class="err" id="erroneline"></span></div>
+
+                <button id="submit">Submit</button>
+                <button id="discard">Discard Changes</button>
+
+
+
+        </div>
+
+      
+{% endblock %}

@@ -101,3 +101,30 @@ a:hover{
 .highlight{
 	background-color: yellow;
 }
+
+.foundsectionheading{
+	font-weight: bold;
+	font-size: x-large;
+}
+
+.alignleft{
+	margin-right: 500px;
+}
+
+.padip{
+	padding: 10px;
+}
+
+.padip2{
+	padding-left: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+}
+
+.instr{
+	padding-top: 10px;
+}
+
+.ipstyle{
+	width: 600px;
+}
