@@ -203,9 +203,6 @@ current_id = 11
 # def hello_world():
 #    return render_template('welcome.html')
 
-@app.route('/infinity')
-def infinity():
-	return render_template('log_sales.html', sales=sales, clients=clients)
 
 @app.route('/')
 def homepage():
@@ -403,54 +400,9 @@ def edit_data(id=None):
 
 
 
-@app.route('/save_sale', methods=['GET', 'POST'])
-def save_sale():
-	global sales
-	global current_id
-	json_data = request.get_json()
-	
-	# make new object
-	new_id = current_id
-	current_id = current_id + 1
-	new_record = {
-		"id": new_id,
-		"salesperson": json_data["salesperson"],
-		"client": json_data["client"],
-		"reams": json_data["reams"]
-	}
-	# sales.append(new_record)
-	sales.insert(0, new_record)
-
-	# Update client list if necessary
-	if json_data["client"] in clients:
-		pass
-	else:
-		clients.append(json_data["client"])
-	# Send back new data
-	new_data = sales.copy()
-	new_data.append(clients)
-
-	return jsonify(sales=new_data)
 
 
-@app.route('/delete_sale', methods=['GET', 'POST'])
-def delete_sale():
-	global sales
-	global current_id
-	id = request.get_json()
 
-	# remove element from sales
-	j = 0
-	for element in sales:
-		if id == element["id"]:
-			break
-		else:
-			j = j + 1
-	sales.pop(j)
-
-	current_id = current_id - 1
-
-	return jsonify(sales=sales)
 
 if __name__ == '__main__':
    app.run(debug = True)
