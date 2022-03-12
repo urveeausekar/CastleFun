@@ -219,6 +219,7 @@ def view(id=None):
 	#print(id)
 	print("in view data")
 	data = castles[id]
+	data["popular"] = data["pop"]
 	print(id)
 	return render_template('view.html', data=data)
 

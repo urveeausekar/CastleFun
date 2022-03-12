@@ -24,6 +24,15 @@
                         <div class="row viewbuiltinrow"><span class="builtinlabel">Built In : </span><span class="viewbuiltin">{{data.year}}</span></div>
                 </div>
                 <div class="col-md-3">
+                        
+                        <div class="row genrediv">
+                                <div class="genreheader">Popularly Associated With</div>
+                                <ul>
+                                        {% for element in data.popular  %}
+                                                <li class='glistitem'>{{element}}</li>
+                                        {% endfor %}
+                                </ul>
+                        </div>
                         <div class="row genrediv">
                                 
                                 
@@ -34,12 +43,6 @@
                                         {% endfor %}
                                 </ul>
 
-                        </div>
-                        <div class="row">
-                                <div>Interesting Trivia</div>
-                                <ul>
-                                        
-                                </ul>
                         </div>
                 </div>
                 <div class="row editbutton"><button class="btn accentcolour" id="edit" type="button">Edit this item</button></div>

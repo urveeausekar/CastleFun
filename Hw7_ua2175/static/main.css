@@ -142,7 +142,7 @@ a:hover{
 
 .titlediv{
 	font-weight: bold;
-	font-size: x-large;
+	font-size: xx-large;
 }
 
 body{
@@ -262,4 +262,8 @@ body{
 .sitetitle{
 	font-weight: bold;
 	font-size: 20px;
+}
+
+.contentdiv{
+	font-size: x-large;
 }
